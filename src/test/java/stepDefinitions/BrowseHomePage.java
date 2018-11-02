@@ -39,6 +39,13 @@ public class BrowseHomePage {
 		homePage.fill_userDetails();
 		homePage.clickOn_Submit();
 	}
+	@When("^print a simple message$")
+	public void printSimpleMessage() {
+		System.out.println("Setup is complete!");
+		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
+		homePage.fill_userDetails();
+		homePage.clickOn_Submit();
+	}
 	@Then("^aos application body is loaded and not null$")
 	public void pageBodyIsNotNull() throws MalformedURLException {
 		String bodyText = Driver.findElement(By.tagName("body")).getText();
