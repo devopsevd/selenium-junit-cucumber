@@ -8,6 +8,8 @@ import java.net.URL;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import dataProvider.ConfigFileReader;
+import managers.*;
 import cucumber.api.java.en.And;
 import org.junit.After;
 import org.junit.Before;
@@ -23,28 +25,26 @@ import pageObjects.HomePage;
 public class Steps {
 
 	WebDriver driver;
-	HomePage home;
+	HomePage homePage;
+	PageObjectManager pageObjectManager;
+	ConfigFileReader configFileReader;
+	WebDriverManager webDriverManager;
 
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
-		String serverUrl = System.getProperty("grid.server.url");
-		String gridServerUrl = "http://10.240.0.7:4444/wd/hub";
-		if (serverUrl != null) {
-			gridServerUrl = serverUrl;
-		}
-		DesiredCapabilities capability = DesiredCapabilities.chrome();
-		URL gridUrl = new URL(gridServerUrl);
-		driver = new RemoteWebDriver(gridUrl, capability);
-		//driver.get("http://www.google.com");
+		webDriverManager = new WebDriverManager();
+		driver = webDriverManager.getDriver();
 	}
 
 	@When("^print a simple message$")
 	public void printSimpleMessage() {
 		System.out.println("Setup is complete!");
-		home = new HomePage(driver);
-		home.navigateTo_HomePage();
-		home.fill_userDetails();
-		home.clickOn_Submit();
+		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
+		pageObjectManager = new PageObjectManager(driver);
+		homePage = pageObjectManager.getHomePage();
+		homePage.navigateTo_HomePage();
+		homePage.fill_userDetails();
+		homePage.clickOn_Submit();
 	}
 
 	@Then("^aos application body is loaded and not null$")
