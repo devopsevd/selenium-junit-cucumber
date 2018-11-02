@@ -18,13 +18,13 @@ public class HomePage{
     @FindBy(xpath= "") 
     private WebElement txtbx_FirstName;
     
-    @FindBy(how = How.CSS, using = "input#lastName.lft") 
+    @FindBy(how = How.CSS, using = "#lastName") 
     private WebElement txtbx_LastName;
     
-    @FindBy(how = How.CSS, using = "input#emailAddress.lft") 
+    @FindBy(how = How.CSS, using = "#emailAddress") 
     private WebElement txtbx_EmailAddress;
 
-    @FindBy(how = How.CSS, using = "input.submitBtn") 
+    @FindBy(how = How.CSS, using = ".submitBtn") 
 	private WebElement btn_Submit;
     
 
