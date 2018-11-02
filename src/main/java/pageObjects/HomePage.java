@@ -15,16 +15,16 @@ public class HomePage{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(how = How.CSS, using = "#firstName") 
+    @FindBy(how = How.CSS, using = "input#firstName") 
     private WebElement txtbx_FirstName;
     
-    @FindBy(how = How.CSS, using = "#lastName") 
+    @FindBy(how = How.CSS, using = "input#lastName") 
     private WebElement txtbx_LastName;
     
-    @FindBy(how = How.CSS, using = "#emailAddress") 
+    @FindBy(how = How.CSS, using = "input#emailAddress") 
     private WebElement txtbx_EmailAddress;
 
-    @FindBy(how = How.CSS, using = ".submitBtn") 
+    @FindBy(how = How.CSS, using = "input.submitBtn") 
 	private WebElement btn_Submit;
     
 
