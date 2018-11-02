@@ -47,9 +47,7 @@ public class HomePage{
     public void fill_userDetails(){
         enter_FirstName("John");
         enter_LastName("Doe");
-        //enter_email("john.doe@test.com");     
-
-          
+        enter_email("john.doe@test.com");             
     }
 
 	public void navigateTo_HomePage() {
