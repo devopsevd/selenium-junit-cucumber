@@ -36,8 +36,6 @@ public class BrowseHomePage {
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
 		homePage.navigateTo_HomePage();
-		homePage.fill_userDetails();
-		homePage.clickOn_Submit();
 	}
 	@When("^print a simple message$")
 	public void printSimpleMessage() {
