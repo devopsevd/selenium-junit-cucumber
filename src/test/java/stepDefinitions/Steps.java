@@ -56,6 +56,7 @@ public class Steps {
 	@And("^close the web browser$")
 	public void tearDownWebDriver() {
 		driver.quit();
+		
 	}
 
 }
