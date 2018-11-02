@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "CucumberFramework",
+                "projectName": "CucumberFramework",
+                "workingDirectory": "c:\\Restored\\code\\selenium\\selenium-junit-cucumber",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "CucumberFramework",
+                "projectName": "CucumberFramework",
+                "workingDirectory": "c:\\Restored\\code\\selenium\\selenium-junit-cucumber",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
