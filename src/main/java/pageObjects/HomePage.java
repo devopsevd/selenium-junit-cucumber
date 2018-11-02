@@ -15,20 +15,18 @@ public class HomePage{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//input[@id='firstName']") 
+
+    @FindBy(how = How.NAME, using = "firstName") 
     private WebElement txtbx_FirstName;
-    // @FindBy(how = How.CSS, using = "input#firstName") 
-    // private WebElement txtbx_FirstName;
     
-    @FindBy(xpath = "//input[@id='lastName']") 
-    // @FindBy(how = How.CSS, using = "input#lastName") 
+    @FindBy(how = How.NAME, using = "lastName") 
     private WebElement txtbx_LastName;
     
-    @FindBy(xpath = "//input[@id='emailAddress']") 
-    // @FindBy(how = How.CSS, using = "input#emailAddress") 
+
+    @FindBy(how = How.NAME, using = "emailAddress") 
     private WebElement txtbx_EmailAddress;
 
-    @FindBy(how = How.CSS, using = "input.submitBtn") 
+    @FindBy(how = How.CSS, using = ".submitBtn") 
 	private WebElement btn_Submit;
     
 
@@ -37,11 +35,11 @@ public class HomePage{
     }
     
     public void enter_LastName(String lastName) {
-		txtbx_FirstName.sendKeys(lastName);
+		txtbx_LastName.sendKeys(lastName);
     }
     
     public void enter_email(String email) {
-		txtbx_FirstName.sendKeys(email);
+		txtbx_EmailAddress.sendKeys(email);
     }
     
     public void clickOn_Submit() {
