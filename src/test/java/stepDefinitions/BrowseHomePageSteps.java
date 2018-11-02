@@ -22,13 +22,13 @@ import pageObjects.HomePage;
  */
 
  
-public class BrowseHomePage {
+public class BrowseHomePageSteps {
 	
 	TestContext testContext;
 	HomePage homePage;
 	WebDriver Driver;
 	
-	public BrowseHomePage(TestContext context) {
+	public BrowseHomePageSteps(TestContext context) {
 		testContext = context;
 		homePage = testContext.getPageObjectManager().getHomePage();
 		Driver=testContext.getWebDriverManager().getDriver();

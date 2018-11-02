@@ -22,10 +22,10 @@ import cucumber.TestContext;
  * @author sanpatnaik
  *
  */
-public class CloseBrowser {
+public class CloseBrowserSteps {
 	TestContext testContext;
 	WebDriver Driver;
-	public CloseBrowser(TestContext context) {
+	public CloseBrowserSteps(TestContext context) {
 		testContext = context;
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
