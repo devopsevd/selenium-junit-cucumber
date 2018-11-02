@@ -35,12 +35,13 @@ public class BrowseHomePageSteps {
 	}
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
-		homePage.navigateTo_HomePage();
+		
 	}
 	@When("^print a simple message$")
 	public void printSimpleMessage() {
 		System.out.println("Setup is complete!");
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
+		homePage.navigateTo_HomePage();
 		homePage.fill_userDetails();
 		homePage.clickOn_Submit();
 	}
