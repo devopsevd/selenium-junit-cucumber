@@ -18,9 +18,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import pageObjects.HomePage;
+
 public class Steps {
 
-	private WebDriver driver;
+	WebDriver driver;
+	HomePage home;
 
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
@@ -32,12 +35,14 @@ public class Steps {
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
 		URL gridUrl = new URL(gridServerUrl);
 		driver = new RemoteWebDriver(gridUrl, capability);
-		driver.get("http://www.google.com");
+		//driver.get("http://www.google.com");
 	}
 
 	@When("^print a simple message$")
 	public void printSimpleMessage() {
 		System.out.println("Setup is complete!");
+		home = new HomePage(driver);
+		home.navigateTo_HomePage();
 	}
 
 	@Then("^aos application body is loaded and not null$")
