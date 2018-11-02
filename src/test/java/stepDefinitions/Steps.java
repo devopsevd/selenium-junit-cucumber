@@ -35,14 +35,14 @@ public class Steps {
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
 		URL gridUrl = new URL(gridServerUrl);
 		driver = new RemoteWebDriver(gridUrl, capability);
-		driver.get("http://www.google.com");
+		//driver.get("http://www.google.com");
 	}
 
 	@When("^print a simple message$")
 	public void printSimpleMessage() {
 		System.out.println("Setup is complete!");
-		//home = new HomePage(driver);
-		//home.navigateTo_HomePage();
+		home = new HomePage(driver);
+		home.navigateTo_HomePage();
 		//home.fill_userDetails();
 	}
 
