@@ -43,7 +43,7 @@ public class Steps {
 		System.out.println("Setup is complete!");
 		home = new HomePage(driver);
 		home.navigateTo_HomePage();
-		home.fill_userDetails();
+		//home.fill_userDetails();
 	}
 
 	@Then("^aos application body is loaded and not null$")
