@@ -15,13 +15,13 @@ public class HomePage{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(how = How.ID, using = "firstName") 
+    @FindBy(how = How.CSS, using = "input#firstName") 
     private WebElement txtbx_FirstName;
     
-    @FindBy(how = How.ID, using = "lastName") 
+    @FindBy(how = How.CSS, using = "input#lastName") 
     private WebElement txtbx_LastName;
     
-    @FindBy(how = How.ID, using = "emailAddress") 
+    @FindBy(how = How.CSS, using = "input#emailAddress") 
     private WebElement txtbx_EmailAddress;
 
     @FindBy(how = How.CSS, using = "input.submitBtn") 
@@ -47,7 +47,9 @@ public class HomePage{
     public void fill_userDetails(){
         enter_FirstName("John");
         enter_LastName("Doe");
-        enter_email("john.doe@test.com");        
+        enter_email("john.doe@test.com");     
+        
+          
     }
 
 	public void navigateTo_HomePage() {
