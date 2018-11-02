@@ -44,11 +44,11 @@ public class HomePage{
 		btn_Submit.submit();
     }
     
-    public void fill_userDetails() throws Exception{
+    public void fill_userDetails(){
         enter_FirstName("John");
-        //enter_LastName("Doe");
+        enter_LastName("Doe");
         //enter_email("john.doe@test.com");     
-        Thread.sleep(3000);
+
           
     }
 
