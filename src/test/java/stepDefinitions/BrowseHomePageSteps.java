@@ -35,7 +35,7 @@ public class BrowseHomePageSteps {
 	}
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
-		
+		Driver=testContext.getWebDriverManager().getDriver();
 	}
 	@When("^print a simple message$")
 	public void printSimpleMessage() {
