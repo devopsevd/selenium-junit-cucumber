@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import dataProvider.ConfigFileReader;
 import managers.*;
 import testDataTypes.*;
+import selenium.*;
 
 public class HomePage{
 	WebDriver driver;
@@ -58,6 +59,8 @@ public class HomePage{
 
 	public void navigateTo_HomePage() {
 		driver.get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
+		/*Invoking Ajax Calls*/
+		Wait.untilPageLoadComplete(driver);
 	}
 
 

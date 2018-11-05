@@ -49,7 +49,11 @@ public class ConfigFileReader {
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("Grid Server URL not specified in the Configuration.properties file.");		
 	}
-	
+	public long getImplicitlyWait() {		
+		String implicitlyWait = properties.getProperty("implicitlyWait");
+		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
+		else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");		
+	}
 	public String getApplicationUrl() {
 		String url = properties.getProperty("HomePageUrl");
 		if(url != null) return url;
