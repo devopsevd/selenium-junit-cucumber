@@ -61,6 +61,7 @@ public class HomePage{
 		driver.get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
 		/*Invoking Ajax Calls*/
 		Wait.untilPageLoadComplete(driver);
+		Wait.untilJqueryIsDone(driver);
 	}
 
 
