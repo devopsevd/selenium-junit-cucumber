@@ -1,6 +1,8 @@
 package pageObjects;
 
 import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -62,6 +64,9 @@ public class HomePage{
 		/*Invoking Ajax Calls*/
 		Wait.untilPageLoadComplete(driver, (long) 20);
 	}
+	/*public String getUserName(Userinfo user) {
+		return user.getEmailAddress().findElement(By.cssSelector("h3")).getText();
+	}*/
 
 
 }

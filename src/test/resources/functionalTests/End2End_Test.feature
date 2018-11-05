@@ -6,5 +6,5 @@ Then aos application body is loaded and not null
 And close the web browser
 Examples:
 	|username|
-	|John|
+	|Sandeep|
 
