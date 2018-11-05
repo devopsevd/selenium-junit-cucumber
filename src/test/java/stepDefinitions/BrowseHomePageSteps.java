@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.TestContext;
 import cucumber.api.PendingException;
@@ -48,6 +49,8 @@ public class BrowseHomePageSteps {
 		homePage.navigateTo_HomePage();
 		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		homePage.fill_userDetails(userdata);
+		//WebDriverWait wait = new WebDriverWait(Driver, 10);
+		Driver.wait(10);
 		homePage.clickOn_Submit();
 		throw new PendingException();
 	}
