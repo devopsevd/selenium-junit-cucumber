@@ -40,7 +40,7 @@ public class BrowseHomePageSteps {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
 	@When("^user \\\"(.*)\\\" is selected$")
-	public void printSimpleMessage(String username) {
+	public void user_is_selected(String username) {
 		System.out.println("Setup is complete!");
 		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
