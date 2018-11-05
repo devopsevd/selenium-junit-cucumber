@@ -40,8 +40,8 @@ public class BrowseHomePageSteps {
 	public void setUp() throws MalformedURLException {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
-	@When("^user “John” is selected$")
-	public void user_John_is_selected(String username) throws Throwable {
+	@When("^user \\\"(.*)\\\" is selected$")
+	public void user_is_selected(String username) throws Throwable {
 		System.out.println("Setup is complete!");
 		
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
