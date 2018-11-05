@@ -40,7 +40,7 @@ public class BrowseHomePageSteps {
 	public void setUp() throws MalformedURLException {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
-	@When("^user \"(.*)\" is selected$")
+	@When("^print a simple message$")
 	public void user_is_selected(String username) throws Throwable {
 		System.out.println("Setup is complete!");
 		
