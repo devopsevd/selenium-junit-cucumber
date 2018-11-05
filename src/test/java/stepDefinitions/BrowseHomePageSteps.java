@@ -50,7 +50,7 @@ public class BrowseHomePageSteps {
 		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		homePage.fill_userDetails(userdata);
 		//WebDriverWait wait = new WebDriverWait(Driver, 10);
-		Driver.wait(10);
+		//Driver.wait(10);
 		homePage.clickOn_Submit();
 		throw new PendingException();
 	}
