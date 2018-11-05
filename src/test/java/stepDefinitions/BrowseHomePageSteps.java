@@ -41,11 +41,12 @@ public class BrowseHomePageSteps {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
 	@When("^user “John” is selected$")
-	public void user_is_selected(String username) throws Throwable {
+	public void user_John_is_selected(String username) throws Throwable {
 		System.out.println("Setup is complete!");
-		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
+		
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
 		homePage.navigateTo_HomePage();
+		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
 		throw new PendingException();
