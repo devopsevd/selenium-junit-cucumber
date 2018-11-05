@@ -9,6 +9,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import dataProvider.ConfigFileReader;
 import managers.*;
+import testDataTypes.*;
 
 public class HomePage{
 	WebDriver driver;
@@ -49,10 +50,10 @@ public class HomePage{
 		btn_Submit.submit();
 	}
 
-	public void fill_userDetails(){
-		enter_FirstName("John");
-		enter_LastName("Doe");
-		enter_email("john.doe@test.com");             
+	public void fill_userDetails(Userinfo user){
+		enter_FirstName(user.getFirstname());
+		enter_LastName(user.getLastName());
+		enter_email(user.getEmailAddress());             
 	}
 
 	public void navigateTo_HomePage() {

@@ -13,8 +13,10 @@ import cucumber.TestContext;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import managers.FileReaderManager;
 import managers.WebDriverManager;
 import pageObjects.HomePage;
+import testDataTypes.*;
 
 /**
  * @author sanpatnaik
@@ -37,12 +39,13 @@ public class BrowseHomePageSteps {
 	public void setUp() throws MalformedURLException {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
-	@When("^print a simple message$")
-	public void printSimpleMessage() {
+	@When("^user \\\"(.*)\\\" is selected$")
+	public void printSimpleMessage(String username) {
 		System.out.println("Setup is complete!");
+		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
 		homePage.navigateTo_HomePage();
-		homePage.fill_userDetails();
+		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
 	}
 	@Then("^aos application body is loaded and not null$")
