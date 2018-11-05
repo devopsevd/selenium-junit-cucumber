@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import cucumber.TestContext;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -40,13 +41,14 @@ public class BrowseHomePageSteps {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
 	@When("^user \\\"(.*)\\\" is selected$")
-	public void user_is_selected(String username) {
+	public void user_is_selected(String username) throws Throwable {
 		System.out.println("Setup is complete!");
 		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
 		homePage.navigateTo_HomePage();
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
+		throw new PendingException();
 	}
 	@Then("^aos application body is loaded and not null$")
 	public void pageBodyIsNotNull() throws MalformedURLException {
