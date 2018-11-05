@@ -17,7 +17,7 @@ import dataProvider.ConfigFileReader;
  *
  */
 public class JsonDataReader {
-	private final String userFilePath = FileReaderManager.getInstance().getConfigReader().getTestDataResourcePath() + "Customer.json";
+	private final String userFilePath = FileReaderManager.getInstance().getConfigReader().getTestDataResourcePath() + "Userinfo.json";
 	private List<Userinfo> userdetails;
 	
 	public JsonDataReader(){
