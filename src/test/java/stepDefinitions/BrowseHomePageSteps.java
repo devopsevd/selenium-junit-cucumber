@@ -49,12 +49,12 @@ public class BrowseHomePageSteps {
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
 		homePage.navigateTo_HomePage();
 		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
-		homePage.fill_userDetails(userdata);
 		/*START: Code to Check the Validation post run*/
 		String Email=homePage.getUserEmail(userdata);
 		System.out.println("DEBUG Line-55: User Email ID is:"+Email);
 		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
 		/*END*/
+		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
 		throw new PendingException();
 	}
