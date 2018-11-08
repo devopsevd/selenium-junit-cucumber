@@ -11,21 +11,20 @@ import enums.Context;
  */
 public class ScenarioContext {
 	private  Map<String, Object> scenarioContext;
-	 
-    public ScenarioContext(){
-        scenarioContext = new HashMap<>();
-    }
 
-    public void setContext(Context key, Object value) {
-    	System.out.println("Key is"+key +"Value is"+value);
-        scenarioContext.put(key.toString(), value);
-    }
+	public ScenarioContext(){
+		scenarioContext = new HashMap<>();
+	}
 
-    public Object getContext(Context key){
-        return scenarioContext.get(key.toString());
-    }
+	public void setContext(Context key, Object value) {
+		scenarioContext.put(key.toString(), value);
+	}
 
-    public Boolean isContains(Context key){
-        return scenarioContext.containsKey(key.toString());
-    }
+	public Object getContext(Context key){
+		return scenarioContext.get(key.toString());
+	}
+
+	public Boolean isContains(Context key){
+		return scenarioContext.containsKey(key.toString());
+	}
 }

@@ -28,14 +28,13 @@ import testDataTypes.*;
  *
  */
 
- 
+
 public class BrowseHomePageSteps {
-	
+
 	TestContext testContext;
 	HomePage homePage;
 	WebDriver Driver;
-	ScenarioContext typecontext;
-	
+
 	public BrowseHomePageSteps(TestContext context) {
 		testContext = context;
 		homePage = testContext.getPageObjectManager().getHomePage();
@@ -48,24 +47,20 @@ public class BrowseHomePageSteps {
 	@When("^print a simple message \"(.*)\"$")
 	public void printSimpleMessage(String username) throws Throwable {
 		System.out.println("Setup is complete!");
-		
+
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
 		homePage.navigateTo_HomePage();
 		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		/*START: Code to Check the Validation post run*/
 		String Email=homePage.getUserEmail(userdata);
 		System.out.println("DEBUG Line-55: User Email ID is:"+Email);
-	//	testContext.scenarioContext.setScenarioContext(Context.USER_EMAIL, Email);
-		//System.out.println("Test Context:"+testContext);
-		//System.out.println("Test getScenario Context:"+testContext.getScenarioContext());
-		//System.out.println("Test getScenario Context:"+testContext.scenarioContext);
-		typecontext.setContext(Context.USER_EMAIL, Email);
+		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
 		/*END*/
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
 		throw new PendingException();
 	}
-	
+
 	@Then("^aos application body is loaded and not null$")
 	public void pageBodyIsNotNull() throws MalformedURLException {
 		String bodyText = Driver.findElement(By.tagName("body")).getText();
