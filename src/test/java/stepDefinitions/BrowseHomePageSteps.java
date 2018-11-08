@@ -16,6 +16,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import enums.Context;
+import enums.DriverType;
 import managers.FileReaderManager;
 import managers.WebDriverManager;
 import pageObjects.HomePage;
@@ -32,6 +33,7 @@ public class BrowseHomePageSteps {
 	TestContext testContext;
 	HomePage homePage;
 	WebDriver Driver;
+	Context type;
 	
 	public BrowseHomePageSteps(TestContext context) {
 		testContext = context;

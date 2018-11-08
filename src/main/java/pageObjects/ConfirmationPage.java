@@ -23,13 +23,13 @@ public class ConfirmationPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindAll(@FindBy(how = How.NAME, using = "emailAddress"))
+	@FindAll(@FindBy(how = How.NAME, using = "firstName"))
 	private List<WebElement> email_List;	
 
 	public List<String> getEmailaddress() {
 		List<String> emails = new ArrayList<>();
 		for(WebElement element : email_List) {
-			emails.add(element.findElement(By.cssSelector("emailAddress")).getText());
+			emails.add(element.findElement(By.cssSelector("firstName")).getText());
 		}
 		return emails;
 	}

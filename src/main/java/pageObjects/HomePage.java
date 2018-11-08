@@ -65,7 +65,7 @@ public class HomePage{
 		Wait.untilPageLoadComplete(driver, (long) 20);
 	}
 	public String getUserEmail(Userinfo email) {
-		String emailadd=email.getEmailAddress();
+		String emailadd=email.getFirstname();
 		return emailadd;
 	}
 
