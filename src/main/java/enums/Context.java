@@ -8,5 +8,5 @@ package enums;
  *
  */
 public enum Context {
-	USER_NAME;
+	USER_EMAIL;
 }

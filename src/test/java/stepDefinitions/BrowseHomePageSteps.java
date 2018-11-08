@@ -15,6 +15,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import enums.Context;
 import managers.FileReaderManager;
 import managers.WebDriverManager;
 import pageObjects.HomePage;
@@ -49,11 +50,14 @@ public class BrowseHomePageSteps {
 		homePage.navigateTo_HomePage();
 		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		homePage.fill_userDetails(userdata);
-		//WebDriverWait wait = new WebDriverWait(Driver, 10);
-		//Driver.wait(10);
+		/*START: Code to Check the Validation post run*/
+		String Email=homePage.getUserEmail(userdata);
+		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
+		/*END*/
 		homePage.clickOn_Submit();
 		throw new PendingException();
 	}
+	
 	@Then("^aos application body is loaded and not null$")
 	public void pageBodyIsNotNull() throws MalformedURLException {
 		String bodyText = Driver.findElement(By.tagName("body")).getText();

@@ -64,9 +64,9 @@ public class HomePage{
 		/*Invoking Ajax Calls*/
 		Wait.untilPageLoadComplete(driver, (long) 20);
 	}
-	/*public String getUserName(Userinfo user) {
-		return user.getEmailAddress().findElement(By.cssSelector("h3")).getText();
-	}*/
+	public String getUserEmail(Userinfo user) {
+		return user.getEmailAddress();
+	}
 
 
 }

@@ -14,6 +14,7 @@ public class PageObjectManager {
 	private WebDriver driver;
 
 	private HomePage homePage;
+	private ConfirmationPage confirmationPage;
 
 	public PageObjectManager(WebDriver driver) {
 
@@ -24,5 +25,8 @@ public class PageObjectManager {
 
 		return (homePage == null) ? homePage = new HomePage(driver) : homePage;
 
+	}
+	public ConfirmationPage getConfirmationPage() {
+		return (confirmationPage == null) ? confirmationPage = new ConfirmationPage(driver) : confirmationPage;
 	}
 }
