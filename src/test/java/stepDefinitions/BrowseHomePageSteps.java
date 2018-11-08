@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import cucumber.ScenarioContext;
 import cucumber.TestContext;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
@@ -33,7 +34,7 @@ public class BrowseHomePageSteps {
 	TestContext testContext;
 	HomePage homePage;
 	WebDriver Driver;
-	Context type;
+	ScenarioContext typecontext;
 	
 	public BrowseHomePageSteps(TestContext context) {
 		testContext = context;
