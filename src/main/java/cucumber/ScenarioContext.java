@@ -17,6 +17,7 @@ public class ScenarioContext {
     }
 
     public void setScenarioContext(Context key, Object value) {
+    	System.out.println("Key is"+key +"Value is"+value);
         scenarioContext.put(key.toString(), value);
     }
 
