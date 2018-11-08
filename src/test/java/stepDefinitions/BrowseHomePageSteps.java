@@ -57,7 +57,8 @@ public class BrowseHomePageSteps {
 	//	testContext.scenarioContext.setScenarioContext(Context.USER_EMAIL, Email);
 		System.out.println("Test Context:"+testContext);
 		System.out.println("Test getScenario Context:"+testContext.getScenarioContext());
-		testContext.getScenarioContext().setScenarioContext(Context.USER_EMAIL, Email);
+		System.out.println("Test getScenario Context:"+testContext.scenarioContext);
+		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
 		/*END*/
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
