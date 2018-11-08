@@ -52,6 +52,7 @@ public class BrowseHomePageSteps {
 		homePage.fill_userDetails(userdata);
 		/*START: Code to Check the Validation post run*/
 		String Email=homePage.getUserEmail(userdata);
+		System.out.println("DEBUG Line-55: User Email ID is:"+Email);
 		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
 		/*END*/
 		homePage.clickOn_Submit();
