@@ -55,6 +55,8 @@ public class BrowseHomePageSteps {
 		String Email=homePage.getUserEmail(userdata);
 		System.out.println("DEBUG Line-55: User Email ID is:"+Email);
 	//	testContext.scenarioContext.setScenarioContext(Context.USER_EMAIL, Email);
+		System.out.println("Test Context:"+testContext);
+		System.out.println("Test getScenario Context:"+testContext.getScenarioContext());
 		testContext.getScenarioContext().setScenarioContext(Context.USER_EMAIL, Email);
 		/*END*/
 		homePage.fill_userDetails(userdata);
