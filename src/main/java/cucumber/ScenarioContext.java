@@ -16,11 +16,11 @@ public class ScenarioContext {
         scenarioContext = new HashMap<>();
     }
 
-    public void setContext(Context key, Object value) {
+    public void setScenarioContext(Context key, Object value) {
         scenarioContext.put(key.toString(), value);
     }
 
-    public Object getContext(Context key){
+    public Object getScenarioContext(Context key){
         return scenarioContext.get(key.toString());
     }
 
