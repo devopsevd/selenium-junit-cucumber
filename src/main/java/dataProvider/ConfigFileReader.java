@@ -37,7 +37,7 @@ public class ConfigFileReader {
 			throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
 		}		
 	}
-	
+
 	public String getSystemgridproperty(){
 		String sysdriverPath = properties.getProperty("Sytemgridproperty");
 		if(sysdriverPath!= null) return sysdriverPath;
@@ -59,7 +59,7 @@ public class ConfigFileReader {
 		if(url != null) return url;
 		else throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
-	
+
 	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");
 		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
@@ -67,7 +67,7 @@ public class ConfigFileReader {
 		else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
 		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
- 
+
 	public EnvironmentType getEnvironment() {
 		String environmentName = properties.getProperty("environment");
 		if(environmentName == null || environmentName.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
@@ -79,10 +79,15 @@ public class ConfigFileReader {
 		if(testDataResourcePath!= null) return testDataResourcePath;
 		else throw new RuntimeException("Test Data Resource Path not specified in the Configuration.properties file for the Key:testDataResourcePath");		
 	}
- 
+
 	public Boolean getBrowserWindowSize() {
 		String windowSize = properties.getProperty("windowMaximize");
 		if(windowSize != null) return Boolean.valueOf(windowSize);
 		return true;
+	}
+	public String getReportConfigPath(){
+		String reportConfigPath = properties.getProperty("reportConfigPath");
+		if(reportConfigPath!= null) return reportConfigPath;
+		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
 	}
 }
