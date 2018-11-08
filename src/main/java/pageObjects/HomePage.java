@@ -21,7 +21,7 @@ public class HomePage{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
+	private List<WebElement> email_List;
 
 	@FindBy(how = How.NAME, using = "firstName") 
 	private WebElement txtbx_FirstName;
@@ -64,8 +64,9 @@ public class HomePage{
 		/*Invoking Ajax Calls*/
 		Wait.untilPageLoadComplete(driver, (long) 20);
 	}
-	public String getUserEmail(Userinfo user) {
-		return user.getEmailAddress();
+	public String getUserEmail(Userinfo email) {
+		String emailadd=email.getEmailAddress();
+		return emailadd;
 	}
 
 
