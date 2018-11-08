@@ -45,7 +45,7 @@ public class BrowseHomePageSteps {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
 	@When("^print a simple message \"(.*)\"$")
-	public void printSimpleMessage(String username) throws Throwable {
+	public void printSimpleMessage(String username){
 		System.out.println("Setup is complete!");
 
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
@@ -58,7 +58,6 @@ public class BrowseHomePageSteps {
 		/*END*/
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
-		throw new PendingException();
 	}
 
 	@Then("^aos application body is loaded and not null$")
