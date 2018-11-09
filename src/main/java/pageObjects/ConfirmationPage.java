@@ -31,7 +31,7 @@ public class ConfirmationPage {
 		List<WebElement> column = table.findElements(By.tagName("td"));
 		List<String> value = new ArrayList<String>();
 
-		System.out.println("Total User's Present in the Application"+rows.size());
+		System.out.println("Total User's Present in the Application: "+rows.size()+" users");
 
 		for (int j=0; j<column.size(); j++){
 			//System.out.println("Searching each value"+column.get(j).getText());
