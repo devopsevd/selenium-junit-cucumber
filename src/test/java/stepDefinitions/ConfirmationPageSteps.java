@@ -5,6 +5,7 @@ package stepDefinitions;
 import org.junit.Assert;
 
 import cucumber.TestContext;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import enums.Context;
 import pageObjects.ConfirmationPage;
@@ -24,7 +25,7 @@ public class ConfirmationPageSteps {
 		confirmationPage = testContext.getPageObjectManager().getConfirmationPage();
 	}
 
-	@Then("^verify the email address$")
+	@And("^verify the email address$")
 	public void verify_the_email_address(){
 		String userEmailadd = (String)testContext.scenarioContext.getContext(Context.USER_EMAIL);
 		Assert.assertTrue(confirmationPage.getEmailaddress().stream().filter(x -> x.contains(userEmailadd)).findFirst().get().length()>0);		
