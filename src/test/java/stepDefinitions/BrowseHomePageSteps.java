@@ -52,11 +52,11 @@ public class BrowseHomePageSteps {
 		homePage.navigateTo_HomePage();
 		//Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
 		Userinfo userdata=homePage.set_userDetails(firstname, lastname, emailid);
-		/*START: Code to Check the Validation post run
+		/*START: Code to Check the Validation post run*/
 		String Email=homePage.getUserEmail(userdata);
 		System.out.println("DEBUG Line-55: User Email ID is:"+Email);
 		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
-		END*/
+		/*END*/
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
 	}
