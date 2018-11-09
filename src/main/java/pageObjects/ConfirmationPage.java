@@ -17,14 +17,17 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class ConfirmationPage {
 	WebDriver driver;
-
+	WebElement userTable = driver.findElement(By.ByClassName.className("springOneTable"));
 	public ConfirmationPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindAll(@FindBy(how = How.NAME, using = "emailAddress"))
-	private List<WebElement> email_List;	
+	//private List<WebElement> email_List;
+	
+	List<WebElement> email_List = userTable.findElements(By.tagName("tr"));
+	//assertEquals(3, email_List.size());
 
 	public List<String> getEmailaddress() {
 		List<String> emails = new ArrayList<>();
