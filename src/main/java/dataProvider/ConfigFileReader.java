@@ -74,11 +74,11 @@ public class ConfigFileReader {
 		else if(environmentName.equals("remote")) return EnvironmentType.REMOTE;
 		else throw new RuntimeException("Environment Type Key value in Configuration.properties is not matched : " + environmentName);
 	}
-	public String getTestDataResourcePath(){
+	/*public String getTestDataResourcePath(){
 		String testDataResourcePath = properties.getProperty("testDataResourcePath");
 		if(testDataResourcePath!= null) return testDataResourcePath;
 		else throw new RuntimeException("Test Data Resource Path not specified in the Configuration.properties file for the Key:testDataResourcePath");		
-	}
+	}*/
 
 	public Boolean getBrowserWindowSize() {
 		String windowSize = properties.getProperty("windowMaximize");
