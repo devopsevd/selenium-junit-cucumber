@@ -53,7 +53,7 @@ public class HomePage{
 		btn_Submit.submit();
 	}
 	public Userinfo set_userDetails(String firstname,String lastname, String emailid){
-		Userinfo user = null;
+		Userinfo user = new Userinfo();
 		user.setFirstname(firstname);
 		user.setLastName(lastname);
 		user.setEmailAddress(emailid);
