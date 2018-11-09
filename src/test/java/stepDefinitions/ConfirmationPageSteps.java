@@ -25,10 +25,10 @@ public class ConfirmationPageSteps {
 		confirmationPage = testContext.getPageObjectManager().getConfirmationPage();
 	}
 
-	@And("^verify the email address$")
+	/*@And("^verify the email address$")
 	public void verify_the_email_address(){
 		String userEmailadd = (String)testContext.scenarioContext.getContext(Context.USER_EMAIL);
 		Assert.assertTrue(confirmationPage.getEmailaddress().stream().filter(x -> x.contains(userEmailadd)).findFirst().get().length()>0);		
-	}
+	}*/
 
 }
