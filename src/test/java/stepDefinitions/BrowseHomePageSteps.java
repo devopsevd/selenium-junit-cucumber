@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.cucumber.listener.Reporter;
+
 import cucumber.ScenarioContext;
 import cucumber.TestContext;
 import cucumber.api.PendingException;
@@ -47,10 +49,11 @@ public class BrowseHomePageSteps {
 	@When("^print a simple message \"(.*)\" \"(.*)\" \"(.*)\"$")
 	public void printSimpleMessage(String firstname,String lastname, String emailid){
 		System.out.println("Setup is complete!");
+		Reporter.addStepLog("Setup is complete");
 
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
 		homePage.navigateTo_HomePage();
-		//Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
+		Reporter.addStepLog("Navigated to Home Page");
 		Userinfo userdata=homePage.set_userDetails(firstname, lastname, emailid);
 		/*START: Code to Check the Validation post run*/
 		String Email=homePage.getUserEmail(userdata);
@@ -58,7 +61,9 @@ public class BrowseHomePageSteps {
 		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
 		/*END*/
 		homePage.fill_userDetails(userdata);
+		Reporter.addStepLog("Filled the User details");
 		homePage.clickOn_Submit();
+		Reporter.addStepLog("Clicked on Submit");
 	}
 
 	@Then("^aos application body is loaded and not null$")

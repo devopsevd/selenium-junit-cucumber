@@ -1,6 +1,6 @@
 /**
  * 
- */
+ *//*
 package dataProvider;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,10 +12,10 @@ import com.google.gson.Gson;
 import managers.FileReaderManager;
 import testDataTypes.Userinfo;
 import dataProvider.ConfigFileReader;
-/**
+*//**
  * @author sanpatnaik
  *
- */
+ *//*
 public class JsonDataReader {
 	private final String userFilePath = FileReaderManager.getInstance().getConfigReader().getTestDataResourcePath() + "Userinfo.json";
 	private List<Userinfo> userdetails;
@@ -42,11 +42,12 @@ public class JsonDataReader {
 	public final Userinfo getUserByName(String userName){
 			 return userdetails.stream().filter(x -> x.getFirstname().equalsIgnoreCase(userName)).findAny().get();
 	}
-	/*public final Customer getCustomerByName(String customerName){
+	public final Customer getCustomerByName(String customerName){
 		for(Customer customer : customerList) {
 			if(customer.firstName.equalsIgnoreCase(customerName)) return customer;
 		}
 		return null;
-	}*/
+	}
  
 }
+*/

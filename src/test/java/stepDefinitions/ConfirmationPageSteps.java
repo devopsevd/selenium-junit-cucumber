@@ -5,6 +5,8 @@ package stepDefinitions;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import com.cucumber.listener.Reporter;
+
 import cucumber.TestContext;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -31,6 +33,7 @@ public class ConfirmationPageSteps {
 	@And("^verify the email address$")
 	public void verify_the_email_address(){
 		String userEmailadd = (String)testContext.scenarioContext.getContext(Context.USER_EMAIL);
+		Reporter.addStepLog("Verifying if the user was added");
 		Assert.assertTrue(confirmationPage.getEmailaddress(Driver).stream().filter(x -> x.contains(userEmailadd)).findFirst().get().length()>0);		
 	}
 
