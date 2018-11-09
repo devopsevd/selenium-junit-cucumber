@@ -26,11 +26,25 @@ public class ConfirmationPage {
 	@FindAll(@FindBy(how = How.CSS, using = ".submitBtn"))
 	private List<WebElement> email_List;	
 
-	public List<String> getEmailaddress() {
+	/*public List<String> getEmailaddress() {
 		List<String> emails = new ArrayList<>();
 		for(WebElement element : email_List) {
-			emails.add(element.findElement(By.tagName("td")).getText());
+			emails.add(element.findElement(By.cssSelector("selector")).getText());
 		}
 		return emails;
+	}*/
+	public List<String> getEmailaddress(WebDriver driver){
+	    WebElement table = driver.findElement(By.xpath("/html/body/div[3]/fieldset/table"));
+	    List<WebElement> rows = table.findElements(By.tagName("tr"));
+	    List<WebElement> column = table.findElements(By.tagName("td"));
+	    List<String> value = new ArrayList<String>();
+
+	    System.out.println(rows.size());
+
+	        for (int j=0; j<column.size(); j++){
+	            System.out.println(column.get(j).getText());
+	            value.add(column.get(j).getText());
+	        }
+	        return value;
 	}
 }
