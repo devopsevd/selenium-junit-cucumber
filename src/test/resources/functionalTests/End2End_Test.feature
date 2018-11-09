@@ -7,4 +7,6 @@ And close the web browser
 Examples:
 	|firstname| |lastname| |emailid          |
 	|Amneet   | |Singh   | |am.singh@test.com|
+	|Balaji   | |Krish   | |ba.krish@test.com|
+	|Pushpn   | |Sahuu   | |pu.sahuu@test.com|
 
