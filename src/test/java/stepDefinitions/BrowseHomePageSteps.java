@@ -44,18 +44,19 @@ public class BrowseHomePageSteps {
 	public void setUp() throws MalformedURLException {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
-	@When("^print a simple message \"(.*)\"$")
-	public void printSimpleMessage(String username){
+	@When("^print a simple message \"(.*)\" \"(.*)\" \"(.*)\"$")
+	public void printSimpleMessage(String firstname,String lastname, String emailid){
 		System.out.println("Setup is complete!");
 
 		/*Created a Page Object Manager. Page Object Manager checks for the object and creates if empty*/
 		homePage.navigateTo_HomePage();
-		Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
-		/*START: Code to Check the Validation post run*/
+		//Userinfo userdata=FileReaderManager.getInstance().getJsonReader().getUserByName(username);
+		Userinfo userdata=homePage.set_userDetails(firstname, lastname, emailid);
+		/*START: Code to Check the Validation post run
 		String Email=homePage.getUserEmail(userdata);
 		System.out.println("DEBUG Line-55: User Email ID is:"+Email);
 		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
-		/*END*/
+		END*/
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
 	}

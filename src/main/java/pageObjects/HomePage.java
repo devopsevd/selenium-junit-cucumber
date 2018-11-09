@@ -52,7 +52,14 @@ public class HomePage{
 	public void clickOn_Submit() {
 		btn_Submit.submit();
 	}
-
+	public Userinfo set_userDetails(String firstname,String lastname, String emailid){
+		Userinfo user = null;
+		user.setFirstname(firstname);
+		user.setLastName(lastname);
+		user.setEmailAddress(emailid);
+		return user;
+		
+	}
 	public void fill_userDetails(Userinfo user){
 		enter_FirstName(user.getFirstname());
 		enter_LastName(user.getLastName());
