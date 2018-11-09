@@ -9,6 +9,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import enums.Context;
 import pageObjects.ConfirmationPage;
+import pageObjects.HomePage;
 
 /**
  * @author sanpatnaik
@@ -19,6 +20,7 @@ import pageObjects.ConfirmationPage;
 public class ConfirmationPageSteps {
 	TestContext testContext;
 	ConfirmationPage confirmationPage;
+	HomePage homePage;
 
 	public ConfirmationPageSteps(TestContext context) {
 		testContext = context;
@@ -27,6 +29,7 @@ public class ConfirmationPageSteps {
 
 	@And("^verify the email address$")
 	public void verify_the_email_address(){
+		homePage.navigateTo_HomePage();
 		String userEmailadd = (String)testContext.scenarioContext.getContext(Context.USER_EMAIL);
 		Assert.assertTrue(confirmationPage.getEmailaddress().stream().filter(x -> x.contains(userEmailadd)).findFirst().get().length()>0);		
 	}
