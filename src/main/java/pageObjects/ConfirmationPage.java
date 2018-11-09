@@ -17,7 +17,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class ConfirmationPage {
 	WebDriver driver;
-	WebElement userTable = driver.findElement(By.className("springOneTable"));
+	WebElement userTable = driver.findElement(By.cssSelector("body > div.springOneTable"));
 	public ConfirmationPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
