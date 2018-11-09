@@ -39,12 +39,13 @@ public class ConfirmationPage {
 	    List<WebElement> column = table.findElements(By.tagName("td"));
 	    List<String> value = new ArrayList<String>();
 
-	    System.out.println(rows.size());
+	    System.out.println("Getting Row Size"+rows.size());
 
 	        for (int j=0; j<column.size(); j++){
-	            System.out.println(column.get(j).getText());
+	            System.out.println("Searching each value"+column.get(j).getText());
 	            value.add(column.get(j).getText());
 	        }
+	        System.out.println("Total table values"+value);
 	        return value;
 	}
 }
