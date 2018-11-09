@@ -12,6 +12,8 @@ import cucumber.TestContext;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Title;
 
 /**
  * @author sanpatnaik
@@ -28,6 +30,8 @@ public class Hooks {
 	public void BeforeSteps() {
 		//Reporter.addStepLog(“Step Log message goes here”);
 		Reporter.assignAuthor("Demo ToolKit - Sandeep Patnaik");
+		
+		
 		/*What all you can perform here
 			Starting a webdriver
 			Setting up DB connections
@@ -37,6 +41,8 @@ public class Hooks {
 			or anything before the test
 		 */
 	}
+	@Title("Demo ToolKit ")
+    @Description("Checking the title of the loaded page.")
 	@After(order = 1)
 	public void afterScenario(Scenario scenario) {
 		if (scenario.isFailed()) {
