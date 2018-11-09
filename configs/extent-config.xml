@@ -8,7 +8,7 @@
 		<encoding>UTF-8</encoding>
 
 		<!-- protocol for script and stylesheets -->   <!-- defaults to https -->
-		<protocol>https</protocol>
+		<protocol>http</protocol>
 
 		<!-- title of the document -->
 		<documentTitle>Demo ToolKit - Cucumber Framework</documentTitle>
