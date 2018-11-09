@@ -24,6 +24,7 @@ public class ConfirmationPageSteps {
 
 	public ConfirmationPageSteps(TestContext context) {
 		testContext = context;
+		homePage = testContext.getPageObjectManager().getHomePage();
 		confirmationPage = testContext.getPageObjectManager().getConfirmationPage();
 	}
 
