@@ -29,7 +29,7 @@ public class ConfirmationPage {
 	public List<String> getEmailaddress() {
 		List<String> emails = new ArrayList<>();
 		for(WebElement element : email_List) {
-			emails.add(element.findElement(By.cssSelector("tr:nth-child(1) > th:nth-child(2)")).getText());
+			emails.add(element.findElement(By.tagName("td")).getText());
 		}
 		return emails;
 	}

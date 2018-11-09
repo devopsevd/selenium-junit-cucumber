@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.ScenarioContext;
 import cucumber.TestContext;
 import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -22,7 +20,6 @@ import enums.Context;
 import enums.DriverType;
 import managers.FileReaderManager;
 import managers.WebDriverManager;
-import pageObjects.ConfirmationPage;
 import pageObjects.HomePage;
 import testDataTypes.*;
 
@@ -37,13 +34,11 @@ public class BrowseHomePageSteps {
 	TestContext testContext;
 	HomePage homePage;
 	WebDriver Driver;
-	ConfirmationPage confirmationPage;
 
 	public BrowseHomePageSteps(TestContext context) {
 		testContext = context;
 		homePage = testContext.getPageObjectManager().getHomePage();
 		Driver=testContext.getWebDriverManager().getDriver();
-		confirmationPage = testContext.getPageObjectManager().getConfirmationPage();
 	}
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
@@ -64,11 +59,6 @@ public class BrowseHomePageSteps {
 		/*END*/
 		homePage.fill_userDetails(userdata);
 		homePage.clickOn_Submit();
-	}
-	@And("^verify the email address$")
-	public void verify_the_email_address(){
-		String userEmailadd = (String)testContext.scenarioContext.getContext(Context.USER_EMAIL);
-		Assert.assertTrue(confirmationPage.getEmailaddress().stream().filter(x -> x.contains(userEmailadd)).findFirst().get().length()>0);		
 	}
 
 	@Then("^aos application body is loaded and not null$")
