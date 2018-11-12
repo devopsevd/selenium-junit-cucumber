@@ -42,6 +42,7 @@ public class BrowseHomePageSteps {
 		homePage = testContext.getPageObjectManager().getHomePage();
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
+	/*Make your changes*/
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
 		Driver=testContext.getWebDriverManager().getDriver();
