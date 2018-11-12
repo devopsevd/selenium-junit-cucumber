@@ -14,7 +14,7 @@ import testDataTypes.Userinfo;
 import dataProvider.ConfigFileReader;
 *//**
  * @author
- *
+ * This Class file can be used when you want to validate user's input
  *//*
 public class JsonDataReader {
 	private final String userFilePath = FileReaderManager.getInstance().getConfigReader().getTestDataResourcePath() + "Userinfo.json";

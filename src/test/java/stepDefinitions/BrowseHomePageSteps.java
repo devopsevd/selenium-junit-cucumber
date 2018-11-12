@@ -58,7 +58,7 @@ public class BrowseHomePageSteps {
 		Userinfo userdata=homePage.set_userDetails(firstname, lastname, emailid);
 		/*START: Code to Check the Validation post run*/
 		String Email=homePage.getUserEmail(userdata);
-		System.out.println("DEBUG Line-55: User Email ID is:"+Email);
+		System.out.println("User's Email ID is:"+Email);
 		testContext.scenarioContext.setContext(Context.USER_EMAIL, Email);
 		/*END*/
 		homePage.fill_userDetails(userdata);
@@ -66,7 +66,7 @@ public class BrowseHomePageSteps {
 		homePage.clickOn_Submit();
 		Reporter.addStepLog("Clicked on Submit");
 	}
-/*Changes performed by the developer*/
+	/*Changes performed by the developer*/
 	@Then("^aos application body is loaded and not null$")
 	public void pageBodyIsNotNull() throws MalformedURLException {
 		String bodyText = Driver.findElement(By.tagName("body")).getText();
