@@ -12,6 +12,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<allure.version>1.5.2</allure.version>
+        <aspectj.version>1.8.4</aspectj.version>
 	</properties>
 
 	<dependencies>
@@ -86,10 +88,20 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>1.7.4</version>
+                        <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
 			</plugin>
+			<plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.10.v20150310</version>
+                <configuration>
+                    <webAppSourceDirectory>${project.build.directory}/site/allure-maven-plugin</webAppSourceDirectory>
+                    <stopKey>stop</stopKey>
+                    <stopPort>1234</stopPort>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 	<reporting>
