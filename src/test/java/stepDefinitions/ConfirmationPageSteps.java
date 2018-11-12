@@ -29,7 +29,7 @@ public class ConfirmationPageSteps {
 		confirmationPage = testContext.getPageObjectManager().getConfirmationPage();
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
-
+/*Changes made*/
 	@And("^verify the email address$")
 	public void verify_the_email_address(){
 		String userEmailadd = (String)testContext.scenarioContext.getContext(Context.USER_EMAIL);
