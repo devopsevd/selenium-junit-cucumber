@@ -65,7 +65,7 @@ public class BrowseHomePageSteps {
 		homePage.clickOn_Submit();
 		Reporter.addStepLog("Clicked on Submit");
 	}
-
+/*Changes performed by the developer*/
 	@Then("^aos application body is loaded and not null$")
 	public void pageBodyIsNotNull() throws MalformedURLException {
 		String bodyText = Driver.findElement(By.tagName("body")).getText();
