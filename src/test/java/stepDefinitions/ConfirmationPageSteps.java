@@ -12,6 +12,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import enums.Context;
 import pageObjects.ConfirmationPage;
+import ru.yandex.qatools.allure.annotations.Step;
 
 /**
  * @author
@@ -30,6 +31,7 @@ public class ConfirmationPageSteps {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
 /*Changes made*/
+	@Step
 	@And("^verify the email address$")
 	public void verify_the_email_address(){
 		String userEmailadd = (String)testContext.scenarioContext.getContext(Context.USER_EMAIL);

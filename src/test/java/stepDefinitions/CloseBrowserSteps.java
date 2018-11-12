@@ -16,6 +16,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import managers.WebDriverManager;
 import pageObjects.HomePage;
+import ru.yandex.qatools.allure.annotations.Step;
 import cucumber.TestContext;
 
 /**
@@ -29,6 +30,7 @@ public class CloseBrowserSteps {
 		testContext = context;
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
+	@Step
 	@And("^close the web browser$")
 	public void tearDownWebDriver() {
 		Driver.quit();

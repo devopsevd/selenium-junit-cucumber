@@ -23,6 +23,10 @@ import enums.DriverType;
 import managers.FileReaderManager;
 import managers.WebDriverManager;
 import pageObjects.HomePage;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.annotations.Step;
+import ru.yandex.qatools.allure.model.SeverityLevel;
 import testDataTypes.*;
 
 /**
@@ -43,10 +47,15 @@ public class BrowseHomePageSteps {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
 	/*Make your changes*/
+	@Features("Run basic functional test")
+	@Step
 	@Given("^The selenium setup is complete$")
 	public void setUp() throws MalformedURLException {
 		Driver=testContext.getWebDriverManager().getDriver();
 	}
+	@Severity(SeverityLevel.NORMAL)
+	@Step
+	
 	@When("^print a simple message \"(.*)\" \"(.*)\" \"(.*)\"$")
 	public void printSimpleMessage(String firstname,String lastname, String emailid){
 		System.out.println("Setup is complete!");
@@ -66,6 +75,7 @@ public class BrowseHomePageSteps {
 		homePage.clickOn_Submit();
 		Reporter.addStepLog("Clicked on Submit");
 	}
+	@Step
 	/*Changes performed by the developer*/
 	@Then("^aos application body is loaded and not null$")
 	public void pageBodyIsNotNull() throws MalformedURLException {
