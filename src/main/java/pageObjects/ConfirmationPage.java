@@ -12,7 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 /**
- * @author sanpatnaik
+ * @author
  *
  */
 public class ConfirmationPage {

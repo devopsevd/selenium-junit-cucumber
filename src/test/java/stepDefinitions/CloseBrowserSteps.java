@@ -19,7 +19,7 @@ import pageObjects.HomePage;
 import cucumber.TestContext;
 
 /**
- * @author sanpatnaik
+ * @author
  *
  */
 public class CloseBrowserSteps {

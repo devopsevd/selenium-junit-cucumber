@@ -13,7 +13,7 @@ import managers.FileReaderManager;
 import testDataTypes.Userinfo;
 import dataProvider.ConfigFileReader;
 *//**
- * @author sanpatnaik
+ * @author
  *
  *//*
 public class JsonDataReader {

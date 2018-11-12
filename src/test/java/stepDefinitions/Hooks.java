@@ -16,7 +16,7 @@ import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Title;
 
 /**
- * @author sanpatnaik
+ * @author
  *
  */
 public class Hooks {

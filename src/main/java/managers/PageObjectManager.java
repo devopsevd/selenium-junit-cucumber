@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.*;
 
 /**
- * @author sanpatnaik
+ * @author
  *
  */
 public class PageObjectManager {

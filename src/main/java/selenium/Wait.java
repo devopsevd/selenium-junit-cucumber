@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import managers.FileReaderManager;
 /**
- * @author sanpatnaik
+ * @author
  *
  */
 public class Wait {

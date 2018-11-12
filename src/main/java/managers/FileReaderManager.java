@@ -6,7 +6,7 @@ import dataProvider.ConfigFileReader;
 //import dataProvider.JsonDataReader;
 
 /**
- * @author sanpatnaik
+ * @author
  *
  */
 public class FileReaderManager {
