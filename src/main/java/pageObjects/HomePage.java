@@ -21,6 +21,7 @@ public class HomePage{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
 	private List<WebElement> email_List;
 
 	@FindBy(how = How.NAME, using = "firstName") 
